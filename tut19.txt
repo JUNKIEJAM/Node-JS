@@ -9,3 +9,10 @@ db.items.insertMany([{name:"Samsung Galaxy J8",price: 20000,rating: 4,qty: 233,s
 //searching for data in MongoDB
 
 db.items.find({rating:3.5})
+
+db.items.find({rating:{$gte:3.5}})
+
+
+db.items.find({$or:[{rating:{$lt:3.5}}]})
+
+db.items.updateOne({name:"Samsung Galaxy J8"},{$set:{price:23000}})
